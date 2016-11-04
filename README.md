@@ -1,6 +1,24 @@
 # fullstack-data-engineer
 全栈数据工程师养成攻略
 
+# 教程笔记
+http://note.youdao.com/noteshare?id=2155cf875395e84d92ef80baeae7c3c0
+
+# 我的个人网站
+http://zhanghonglun.cn/
+
+# 优酷
+http://v.youku.com/v_show/id_XMTc1NDY1NjM2OA==.html?f=28356198&from=y1.7-3
+
+# 腾讯
+http://v.qq.com/vplus/334d685e3cea789f67d5bd9617482a49/foldervideos/1ad000101bqho2b
+
+# 土豆
+http://www.tudou.com/listplay/IstkSpQCB1o.html
+
+# 爱奇艺
+http://www.iqiyi.com/v_19ruejtj7x.html?list=19rrkraftq
+
 - 1 序言 暖个场子
 - 2 序言 数据工程和编程语言
 - 3 序言 带好装备Python和Sublime
