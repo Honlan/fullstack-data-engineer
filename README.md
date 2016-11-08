@@ -7,6 +7,9 @@ http://note.youdao.com/noteshare?id=2155cf875395e84d92ef80baeae7c3c0
 # 我的个人网站
 http://zhanghonglun.cn/
 
+# 我的微信
+Honlann，我建了一个交流群，目前超过了100人，所以想加入的童鞋可以先加我好友，然后我拉你
+
 # 优酷
 http://v.youku.com/v_show/id_XMTc1NDY1NjM2OA==.html?f=28356198&from=y1.7-3
 
