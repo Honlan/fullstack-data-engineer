@@ -28,3 +28,9 @@ http://www.iqiyi.com/v_19ruejtj7x.html?list=19rrkraftq
 - 4 Python 先学会基本语法
 - 5 实战 西游记用字统计
 - 6 数据 解读数据结构和类型
+- 7 爬虫 Http请求和Chrome
+- 8 爬虫 使用urllib2获取数据
+- 9 实战 爬取豆瓣电影数据
+- 10 数据库 用MAMP和WAMP搭建Web环境
+- 11 数据库 MySQL使用方法
+- 12 数据库 使用Python操作MySQL
