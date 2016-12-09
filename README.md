@@ -10,6 +10,15 @@ http://zhanghonglun.cn/
 # 我的微信
 Honlann，我建了一个交流群，目前超过了100人，所以想加入的童鞋可以先加我好友，然后我拉你
 
+# 雪晴数据网
+http://www.xueqing.tv/course/73
+
+# 毕业僧
+http://www.biyeseng.cn/front/couinfo/34
+
+# 研趣网
+http://www.rinterest.cn/course/72
+
 # 优酷
 http://v.youku.com/v_show/id_XMTc1NDY1NjM2OA==.html?f=28356198&from=y1.7-3
 
@@ -34,3 +43,9 @@ http://www.iqiyi.com/v_19ruejtj7x.html?list=19rrkraftq
 - 10 数据库 用MAMP和WAMP搭建Web环境
 - 11 数据库 MySQL使用方法
 - 12 数据库 使用Python操作MySQL
+- 13 ggplot2 在R中进行可视化
+- 14 ggplot2 基本语法和基础图形
+- 15 实战 Diamonds数据集探索
+- 16 NLP 走近自然语言处理
+- 17 NLP 使用jieba分词处理文本
+- 18 NLP WordEmbedding的概念和实现
