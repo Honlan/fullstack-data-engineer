@@ -49,3 +49,6 @@ http://www.iqiyi.com/v_19ruejtj7x.html?list=19rrkraftq
 - 16 NLP 走近自然语言处理
 - 17 NLP 使用jieba分词处理文本
 - 18 NLP WordEmbedding的概念和实现
+- 19 Web基础 网页的骨骼HTML
+- 20 Web基础 网页的血肉CSS
+- 21 Web基础 网页的关节JS
