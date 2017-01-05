@@ -10,6 +10,9 @@ http://zhanghonglun.cn/
 # 我的微信
 Honlann，我建了一个交流群，目前超过了100人，所以想加入的童鞋可以先加我好友，然后我拉你
 
+# 网易云课堂
+http://study.163.com/course/courseMain.htm?courseId=1003520028
+
 # 雪晴数据网
 http://www.xueqing.tv/course/73
 
@@ -52,3 +55,13 @@ http://www.iqiyi.com/v_19ruejtj7x.html?list=19rrkraftq
 - 19 Web基础 网页的骨骼HTML
 - 20 Web基础 网页的血肉CSS
 - 21 Web基础 网页的关节JS
+- 22 Web进阶 比JS更方便的JQuery
+- 23 实战 和DT财经合作的中秋节月饼项目
+- 24 Web进阶 基于ThinkPHP的简易个人博客
+- 25 Web进阶 基于Flask的简易个人博客
+- 26 动态可视化 国内开源良心之作ECharts
+- 27 实战 再谈豆瓣电影数据分析项目
+- 28 动态可视化 数据可视化之魅D3
+- 29 实战 星战系列电影知识图谱可视化
+- 30 动态可视化 艺术家的可视化工具Processing
+- 31 实战 上海地铁的一天动态可视化
