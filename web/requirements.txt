@@ -1,0 +1,3 @@
+Flask
+mysql-python
+numpy
