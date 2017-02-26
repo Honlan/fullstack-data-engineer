@@ -10,7 +10,6 @@ import warnings
 warnings.filterwarnings("ignore")
 import MySQLdb
 import MySQLdb.cursors
-import numpy as np
 from config import *
 
 app = Flask(__name__)
@@ -41,9 +40,10 @@ def message():
 	message_type = data['message_type']
 	content = data['content']
 	url = data['url']
+	group_name = data['group_name']
 	timestamp = int(time.time())
 	(db,cursor) = connectdb()
-	cursor.execute("insert into message(username, message_type, content, url, timestamp) values(%s, %s, %s, %s, %s)", [username, message_type, content, url, timestamp])
+	cursor.execute("insert into message(username, message_type, content, url, group_name, timestamp) values(%s, %s, %s, %s, %s, %s)", [username, message_type, content, url, group_name, timestamp])
 	closedb(db,cursor)
 	return json.dumps({'ok': True})
 
