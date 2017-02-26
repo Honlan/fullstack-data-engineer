@@ -41,11 +41,15 @@ def message():
 	content = data['content']
 	url = data['url']
 	group_name = data['group_name']
+	token = data['token']
 	timestamp = int(time.time())
-	(db,cursor) = connectdb()
-	cursor.execute("insert into message(username, message_type, content, url, group_name, timestamp) values(%s, %s, %s, %s, %s, %s)", [username, message_type, content, url, group_name, timestamp])
-	closedb(db,cursor)
-	return json.dumps({'ok': True})
+	if token == TOKEN:
+		(db,cursor) = connectdb()
+		cursor.execute("insert into message(username, message_type, content, url, group_name, timestamp) values(%s, %s, %s, %s, %s, %s)", [username, message_type, content, url, group_name, timestamp])
+		closedb(db,cursor)
+		return json.dumps({'ok': True})
+	else:
+		return json.dumps({'ok': False})
 
 if __name__ == '__main__':
 	app.run(debug=True)
