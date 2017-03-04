@@ -37,15 +37,15 @@ def index():
 def message():
 	data = request.form
 	username = data['username']
+	userid = data['userid']
 	message_type = data['message_type']
 	content = data['content']
 	url = data['url']
-	group_name = data['group_name']
 	token = data['token']
 	timestamp = int(time.time())
 	if token == TOKEN:
 		(db,cursor) = connectdb()
-		cursor.execute("insert into message(username, message_type, content, url, group_name, timestamp) values(%s, %s, %s, %s, %s, %s)", [username, message_type, content, url, group_name, timestamp])
+		cursor.execute("insert into message(username, userid, message_type, content, url, timestamp) values(%s, %s, %s, %s, %s, %s)", [username, userid, message_type, content, url, timestamp])
 		closedb(db,cursor)
 		return json.dumps({'ok': True})
 	else:
