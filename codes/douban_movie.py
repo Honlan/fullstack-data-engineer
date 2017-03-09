@@ -12,7 +12,6 @@ import json
 from bs4 import BeautifulSoup
 
 # 获取所有标签
-tags = []
 url = 'https://movie.douban.com/j/search_tags?type=movie'
 request = urllib2.Request(url=url)
 response = urllib2.urlopen(request, timeout=20)
@@ -70,6 +69,7 @@ for x in xrange(0, len(movies)):
 	# 提取电影简介
 	# 捕捉异常，有的电影详情页中并没有简介
 	try:
+		# 尝试提取电影简介
 		description = html.find_all("span", attrs={"property": "v:summary"})[0].get_text()
 	except Exception, e:
 		# 没有提取到简介，则简介为空
@@ -84,7 +84,10 @@ for x in xrange(0, len(movies)):
 	time.sleep(0.5)
 
 fw = open('douban_movies.txt', 'w')
+# 写入一行表头，用于说明每个字段的意义
 fw.write('title^rate^url^cover^id^description\n')
 for item in movies:
+	# 用^作为分隔符
+	# 主要是为了避免中文里可能包含逗号发生冲突
 	fw.write(item['title'] + '^' + item['rate'] + '^' + item['url'] + '^' + item['cover'] + '^' + item['id'] + '^' + item['description'] + '\n')
 fw.close()
