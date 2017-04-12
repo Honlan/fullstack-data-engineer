@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="">
+    <!-- 引入外部.js脚本文件 -->
+    <!--script src="script.js"></script-->
+</head>
+
+<body>
+	<h1 id="title">标题内容</h1>
+	<button type="button" onclick="myFunc()">点我</button>
+</body>
+<script>
+console.log("Hello World!")
+document.write('<h1>Hello World!</h1>');
+
+// 变量 
+var a = 1; // 整数
+var b = 1.1; // 浮点数
+var c = 'Hello'; //字符串
+console.log(a, b, c);
+
+var d = []; // 数组
+// 添加元素
+// Python中的列表是append()
+d.push(1);
+d.push(2);
+console.log(d);
+// 打印下标为1，即第二个元素
+console.log(d[1]);
+// 数组长度，Python中是用len()
+console.log(d.length);
+
+var e = {}; // 对象
+// 添加key和value
+e['k1'] = 1;
+e['k2'] = 2;
+e['k3'] = 'Hello';
+console.log(e);
+console.log(e['k1']);
+
+var t = document.getElementById('title');
+console.log(t);
+
+function myFunc (argument) {
+	var t = document.getElementById('title');
+	t.innerHTML = '<p>按钮被点击了</p><p>按钮被点击了</p>';
+}
+
+// 条件
+if (a == 1) {
+	console.log('a equal 1');
+}
+else {
+	console.log('a not equal 1');
+}
+
+if (a == 1) {
+	console.log('a equal 1');
+}
+else if (a == 2) {
+	console.log('a equal 2');
+}
+else {
+	console.log('a not equal 1, 2');
+}
+
+// 循环遍历数组
+for (var i = 0; i < d.length; i++) {
+	console.log(i, d[i]);
+}
+// 循环遍历对象
+for (var key in e) {
+	console.log(key, e[key]);
+}
+
+</script>
+
+</html>

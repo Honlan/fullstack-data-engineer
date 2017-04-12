@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的博客</title>
+</head>
+<style>
+	html, body {
+		margin: 0;
+		padding: 0;
+	}
+	header, footer {
+		padding: 30px 40px;
+		background-color: #f2f2f2;
+		color: #666;
+	}
+	header a {
+		padding: 0 20px;
+		color: #999;
+		text-decoration: none;
+	}
+	header a:hover {
+		color: #333;
+	}
+	footer {
+		text-align: center;
+	}
+	#content {
+		padding: 30px 40px;
+	} 
+</style>
+<body>
+	<header>
+		<a href="{:U('Index/index')}">首页</a>
+		<a href="{:U('Index/list')}">文章列表</a>
+	</header>
+	<div id="content">
+		{__CONTENT__}
+	</div>	
+	<footer>Copyright @ EasyBlog</footer>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="">
+
+    <!-- 引入外部.css样式文件 -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- 在HTML中定义CSS -->
+    <style>
+		h1 {
+			font-size: 24px;
+			color: blue;
+		}
+
+		p {
+			font-size: 20px;
+			color: red;
+		}
+
+		/*背景*/
+		body {
+			background-color: rgb(150, 234, 213);
+			background-image: url(http://zhanghonglun.cn/blog/wp-content/uploads/2015/09/bg.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+			background-position: center;
+		}
+
+		/*文本*/
+		h1 {
+			color: #ddd;
+			text-align: center;
+			text-decoration: none;
+			text-indent: 1em;
+			line-height: 1.2;
+			font-size: 22px;
+			font-family: Microsoft Yahei;
+		}
+
+		/*边距*/
+		p {
+			margin: 30px 40px;
+			padding: 5px;
+		}
+
+		/*边框*/
+		div {
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			box-shadow: 1px 1px 1px rgba(20, 20, 20, 0.4);
+		}
+
+		/*鼠标悬浮后产生变换*/
+		#transform {
+			width: 200px;
+			height: 120px;
+			/* 过渡 */
+			-webkit-transition: -webkit-transform .4s;
+			-moz-transition: -moz-transform .4s;
+			-ms-transition: -ms-transform .4s;
+			-o-transition: -o-transform .4s;
+			transition: transform .4s;
+		}
+		#transform:hover {
+			cursor: pointer;
+			/* Safari and Chrome */
+			-webkit-transform: rotate(180deg);
+			/* Firefox */
+			-moz-transform: rotate(180deg);
+			/* IE */
+			-ms-transform: rotate(180deg);
+			/* Opera */
+			-o-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
+
+		#animation {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: relative;
+			animation: myfirst 5s;
+			-webkit-animation: myfirst 5s; /* Safari and Chrome */
+		}
+
+		@keyframes myfirst
+		{
+			0%   {background:red; left:0px; top:0px;}
+			25%  {background:yellow; left:200px; top:0px;}
+			50%  {background:blue; left:200px; top:200px;}
+			75%  {background:green; left:0px; top:200px;}
+			100% {background:red; left:0px; top:0px;}
+		}
+
+		@-webkit-keyframes myfirst /* Safari and Chrome */
+		{
+			0%   {background:red; left:0px; top:0px;}
+			25%  {background:yellow; left:200px; top:0px;}
+			50%  {background:blue; left:200px; top:200px;}
+			75%  {background:green; left:0px; top:200px;}
+			100% {background:red; left:0px; top:0px;}
+		}
+
+		button {
+			padding: 16px 20px;
+			margin: 10px;
+			outline: none;
+			background-color: transparent;
+			border: 1px solid #6ebade;
+			font-size: 30px;
+			color: #6ebade;
+			border-radius: 5px;
+			font-family: Microsoft Yahei;
+			-webkit-transition: color, background-color .4s;
+			-ms-transition: color, background-color .4s;
+			-moz-transition: color, background-color .4s;
+			-o-transition: color, background-color .4s;
+			transition: color, background-color .4s;
+		}
+
+		button:hover {
+			background-color: #6ebade;
+			color: #fff;
+			cursor: pointer;
+		}
+    </style>
+</head>
+
+<body>
+    <!-- 在DOM元素中使用内联CSS -->
+    <h1 style="font-size:30px;color:green;">这里是一级标题</h1>
+    <p style="font-size:24px;background-color:blue;">这里是一段内容</p>
+
+    <div style="width:200px;height:120px;"></div>
+
+    <h2 style="float:right;">浮动的内容</h2>
+
+    <span style="display:block;">块级元素span</span>
+    <span style="display:block;">块级元素span</span>
+
+    <div id="transform">鼠标悬浮后产生变换</div>
+
+    <div id="animation">CSS3动画</div>
+
+    <button>按钮</button>
+</body>
+
+</html>

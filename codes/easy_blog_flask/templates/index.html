@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block body %} 
+<h1>欢迎来到我的博客</h1>
+
+<form action="{{url_for('handle')}}" method="post">
+	<h4>添加文章</h4>
+	<input type="text" name="title" placeholder="标题">
+	<textarea name="content" cols="30" rows="10" placeholder="内容"></textarea>
+	<button type="submit">提交</button>
+</form>
+{% endblock %}

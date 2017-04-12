@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block body %} 
+<style>
+	.p {
+		padding: 30px;
+		border: 1px solid #888;
+		margin: 20px;
+	}
+</style>
+<h1>文章列表</h1>
+<div id="list">
+	{% for item in posts %}
+		<div class="p">
+			<h4><a href="{{url_for('post', post_id=item['id'])}}">{{item['title']}}</a></h4>
+			<p>{{item['timestamp']}}</p>
+		</div>	
+	{% endfor %}
+</div>
+{% endblock %}

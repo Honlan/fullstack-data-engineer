@@ -1,0 +1,25 @@
+<style>
+	.p {
+		padding: 30px;
+		border: 1px solid #888;
+		margin: 20px;
+	}
+</style>
+<h1>文章列表</h1>
+<div id="list">
+	<!-- <foreach name="posts" item="v">
+		<div class="p">
+			<h4><a href="{:U('Index/post', array('id'=>$v['id']))}">{$v.title}</a></h4>
+			<p>{$v.timestamp|date='Y:m:d H:i:s', ###}</p>
+		</div>
+	</foreach> -->
+
+	<?php
+		foreach ($posts as $k => $v) {
+			echo '<div class="p">';
+			echo '<h4><a href="'.U('Index/post', array('id'=>$v['id'])).'">'.$v['title'].'</a></h4>';
+			echo '<p>'.date('Y:m:d H:i:s', $v['timestamp']).'</p>';
+			echo '</div>';
+		}
+	?>
+</div>

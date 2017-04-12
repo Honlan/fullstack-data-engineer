@@ -8,7 +8,7 @@ sys.setdefaultencoding("utf8")
 import MySQLdb
 import MySQLdb.cursors
 
-db = MySQLdb.connect(host='127.0.0.1', user='root', passwd='root', db='douban', port=8889, charset='utf8', cursorclass = MySQLdb.cursors.DictCursor)
+db = MySQLdb.connect(host='127.0.0.1', user='root', passwd='root', db='douban', port=8889, charset='utf8', cursorclass=MySQLdb.cursors.DictCursor)
 db.autocommit(True)
 cursor = db.cursor()
 

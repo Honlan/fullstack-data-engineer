@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="">
+    <!-- 引入JQuery -->
+    <!-- 1.下载后使用相对路径引入 -->
+    <!--script src="jquery.min.js"></script-->
+    <!-- 2.使用CDN引入 -->
+    <script src='http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js'></script>
+</head>
+
+<body>
+    <p></p>
+    
+    <button></button>
+    
+    <h1>标题一</h1>
+    <h1>标题二</h1>
+    <h1>标题三</h1>
+    
+    <input type="text">
+    
+    <button id="btn1">隐藏</button>
+    <button id="btn2">显示</button>
+    
+    <h2 style="position:relative;">一段简单的动画</h2>
+    
+    <h3 style="position:relative;">一段简单的动画</h3>
+
+	<h4>回调函数</h4>
+
+	<h5 name="title"></h5>
+
+	<h6>操作CSS属性</h6>
+
+	<ul>
+		<li>第一行</li>
+		<li>第一行</li>
+		<li>第一行</li>
+		<li>第一行</li>
+		<li>第一行</li>
+		<li>第一行</li>
+	</ul>
+</body>
+<script>
+$(document).ready(function() {
+    // 设置p的文本内容
+    $('p').text('你好');
+    // 也可以这样写
+    // var p = $('p');
+    // p.text('你好');
+
+    // 读取p的内容
+    var content = $('p').text();
+    console.log(content);
+
+    // id选择器
+    $('#title').text('你好');
+
+    // class选择器
+    $('.title').text('你好');
+
+    // 子元素选择器
+    $('h1>span').text('你好');
+
+    // 后代元素选择器
+    $('h1 span').text('你好');
+
+    // 兄弟选择器
+    $('p~span').text('你好');
+
+    // 相邻兄弟选择器
+    $('p+span').text('你好');
+
+    // 属性选择器
+    // <p name="title"></p>
+    $('p[name="title"]').text('你好');
+
+    // 为button绑定鼠标点击事件
+    $('button').click(function(event) {
+        console.log('Click!');
+    });
+
+    // this选择器
+    $('h1').mouseenter(function(event) {
+        $(this).text('鼠标进入');
+    });
+
+    $('h1').mouseleave(function(event) {
+        $(this).text('鼠标离开');
+    });
+
+    $('input').keyup(function(event) {
+        var content = $(this).val();
+        console.log(content);
+    });
+
+    $('input').keyup(function(event) {
+        var content = $(this).val();
+        $('h1').text(content);
+    });
+
+    $('#btn1').click(function(event) {
+        $('h1').hide();
+    });
+
+    $('#btn2').click(function(event) {
+        $('h1').show();
+    });
+
+    // 动画
+    $('h2').animate({
+            top: 100,
+            left: 100
+        },
+        2000);
+
+    // 链式操作
+    $('h3').text('链式操作').animate({
+            top: 100,
+            left: 100
+        },
+        2000).fadeOut(1000);
+
+    // 回调函数
+    $('h4').fadeOut(5000, function(){
+    	console.log('完成淡出');
+    })
+
+    $('p').text('<span>text函数</span>');
+    $('p').html('<span>html函数</span>');
+
+    // 读取属性
+    var name = $('h5').attr('name');
+    console.log(name);
+    // 设置属性
+    $('h5').attr('name', 'test');
+
+    // 设置CSS属性
+    $('h6').css('color', 'red');
+    // 读取CSS属性
+    console.log($('h6').css('color'));
+
+
+    // each函数
+    $('li').each(function(index, el) {
+    	if (index % 2 == 0) {
+    		$(this).css('color', 'blue');
+    	}
+    	else {
+    		$(this).css('color', 'red');
+    	}
+    });
+
+    $.ajax({
+    	url: 'data.json',
+    	type: 'GET',
+    	dataType: 'json',
+    	data: {},
+    })
+    .done(function(data) {
+    	console.log(data);
+    	console.log("success");
+    })
+    .fail(function() {
+    	console.log("error");
+    })
+    .always(function() {
+    	console.log("complete");
+    });
+    
+});
+</script>
+
+</html>
