@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的第一个ECharts</title>
+	<!-- 下载并引入 -->
+	<!--script src="echarts.min.js"></script-->
+	<!-- 使用CDN -->
+	<script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
+</head>
+<body>
+	<div id="main" style="width:600px;height:400px;"></div>
+</body>
+</html>
+<script>
+var myChart = echarts.init(document.getElementById('main'));
+// 使用主题，需要引入主题js文件
+// var myChart = echarts.init(document.getElementById('main', 'vintage'));
+
+var option = {
+    title: {
+        text: 'ECharts 入门示例'
+    },
+    tooltip: {},
+    legend: {
+        data:['销量']
+    },
+    xAxis: {
+        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+    },
+    yAxis: {},
+    series: [{
+        name: '销量',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
+    }]
+};
+
+myChart.setOption(option);
+</script>

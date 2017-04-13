@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>和D3邂逅的第一眼</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<style>
+span {
+    border-radius: 4px;
+    border: 1px solid #333;
+    color: #333;
+    font-family: Microsoft Yahei;
+    font-size: 16px;
+    left: 10%;
+    padding: 10px 20px;
+    position: absolute;
+    top: 20px;
+    -webkit-transition: color, background-color .2s;
+    -moz-transition: color, background-color .2s;
+    -ms-transition: color, background-color .2s;
+    -o-transition: color, background-color .2s;
+    transition: color, background-color .2s;
+}
+
+span:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #333;
+}
+</style>
+
+<body style="text-align:center;position:relative;">
+    <span>解散</span>
+    <svg width="960" height="600" style="margin:40px;">
+        <g></g>
+    </svg>
+</body>
+<script>
+$(document).ready(function() {
+    var mode = true;
+
+    var alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var chars = [];
+    for (var i = 0; i < 200; i++) {
+        chars.push(alphabet[Math.floor(Math.random() * alphabet.length)]);
+    }
+
+    var svg = d3.select('svg');
+    var width = svg.attr('width');
+    var height = svg.attr('height');
+
+    svg.select('g')
+        .selectAll('text')
+        .data(chars)
+        .enter()
+        .append('text')
+        .text(function(d) {
+            return d;
+        }).attr('transform', function(d, i) {
+            return 'translate(' + (i * width / chars.length) + ',' + (height / 2 + (height - 40) * Math.sin(i * 0.1) / 2) + ')';
+        }).attr('font-size', function(d) {
+            return Math.floor(10 + 15 * Math.random());
+        }).attr('fill', '#333')
+        .attr('fill-opacity', function(d) {
+            return Math.random() * 0.6 + 0.4;
+        });
+
+    $('span').click(function(event) {
+        fly(mode);
+        if (mode) {
+            $(this).text('站队');
+            mode = false;
+        } else {
+            $(this).text('解散');
+            mode = true;
+        }
+    });
+
+    function fly(param) {
+        d3.select('svg g')
+            .selectAll('text')
+            .transition()
+            .delay(function(d, i) {
+                return i * 2;
+            })
+            .duration(600)
+            .attr('transform', function(d, i) {
+                if (mode) {
+                    return 'translate(' + (width - 40) * Math.random() + ',' + (height - 40) * Math.random() + ')';
+                } else {
+                    return 'translate(' + (i * width / chars.length) + ',' + (height / 2 + (height - 40) * Math.sin(i * 0.1) / 2) + ')';
+                }
+            });
+    }
+});
+</script>
+
+</html>

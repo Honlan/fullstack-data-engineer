@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>深入理解D3</title>
+    <style>
+    text {
+        font: bold 48px monospace;
+    }
+    
+    .enter {
+        fill: green;
+    }
+    
+    .update {
+        fill: #333;
+    }
+    
+    .exit {
+        fill: brown;
+    }
+    </style>
+</head>
+
+<body>
+    <svg width="960" height="500"></svg>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</body>
+<script>
+var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height"),
+    g = svg.append("g").attr("transform", "translate(32," + (height / 2) + ")");
+
+function update(data) {
+    var t = d3.transition()
+        .duration(750);
+
+    // 将提供的数据绑定到g中的全部text上
+    // 使用data()绑定数据时结合匿名函数，使得每个字母都有唯一对应的text
+    var text = g.selectAll("text")
+        .data(data, function(d) {
+            return d;
+        });
+
+    // 对于已有的text，如果对应的字母在data中未出现，则移除
+    // exit()是退出，即开始移除
+    // 然后执行一系列更新，包括添加class、过渡、更新y值、降低透明度
+    // 过渡后text向下方淡出
+    // 最后执行remove()，即完成移除，将text从DOM中删除
+    text.exit()
+        .attr("class", "exit")
+        .transition(t)
+        .attr("y", 60)
+        .style("fill-opacity", 1e-6)
+        .remove();
+
+    // 对于已有的text，如果对应的字母在data中出现了，则更新
+    // 修改class、更新y值、提高透明度、过渡、更新x值
+    // 更新x值是为了将text移动到字母顺序对应的位置
+    text.attr("class", "update")
+        .attr("y", 0)
+        .style("fill-opacity", 1)
+        .transition(t)
+        .attr("x", function(d, i) {
+            return i * 32;
+        });
+
+    // 对于data中新出现的字母，没有text与之对应，则添加
+    // 添加完毕后执行一系列设置，包括class、dy、y、x、透明度、文本
+    // 过渡后更新y值和透明度，使得text从上方淡入
+    text.enter().append("text")
+        .attr("class", "enter")
+        .attr("dy", ".35em")
+        .attr("y", -60)
+        .attr("x", function(d, i) {
+            return i * 32;
+        })
+        .style("fill-opacity", 1e-6)
+        .text(function(d) {
+            return d;
+        })
+        .transition(t)
+        .attr("y", 0)
+        .style("fill-opacity", 1);
+}
+
+// 第一次对26个字母调用
+update(alphabet);
+
+// 每个1.5秒再调用一次
+d3.interval(function() {
+    // d3.shuffle()用于打乱一个数组
+    // slice()用于截取数组的一部分，两个参数为开始下标和结束下标
+    // sort()对截取的数组按字母表顺序排序
+    // 以下操作即从26个字母中随机选取若干个，排序后以数组形式传递给update()
+    update(d3.shuffle(alphabet)
+        .slice(0, Math.floor(Math.random() * 26))
+        .sort());
+}, 1500);
+</script>
+
+</html>
