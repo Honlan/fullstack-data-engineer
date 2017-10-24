@@ -3,6 +3,8 @@
 ## 教程笔记
 http://note.youdao.com/noteshare?id=2155cf875395e84d92ef80baeae7c3c0
 
+不过笔记好像不能访问了，可以先看看知乎上的专栏，整理了一部分：https://zhuanlan.zhihu.com/fullstack-data-engineer
+
 ## 我的个人网站
 http://zhanghonglun.cn/
 
@@ -63,4 +65,4 @@ Honlann，我建了一个交流群，目前超过了100人，所以想加入的�
 
 ## 文件说明
 - `data`文件夹下放了一些教程里会用到的数据和代码
-- `web`文件夹是基于Flask实现的一个简单网站，用于统计和展示全栈微信群的消息
+- `codes`文件夹下放了一些实战项目用到的代码
