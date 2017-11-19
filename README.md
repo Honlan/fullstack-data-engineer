@@ -3,8 +3,6 @@
 ## 教程笔记
 http://note.youdao.com/noteshare?id=2155cf875395e84d92ef80baeae7c3c0
 
-不过笔记好像不能访问了，可以先看看知乎上的专栏，整理了一部分：https://zhuanlan.zhihu.com/fullstack-data-engineer
-
 ## 我的个人网站
 http://zhanghonglun.cn/
 
