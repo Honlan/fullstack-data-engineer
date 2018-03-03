@@ -3,6 +3,8 @@
 ## 教程笔记
 http://note.youdao.com/noteshare?id=2155cf875395e84d92ef80baeae7c3c0
 
+有道总是莫名其妙地和谐我的笔记，干脆不用了，直接传个pdf好了，请参考`课程笔记.pdf`
+
 ## 我的个人网站
 http://zhanghonglun.cn/
 
